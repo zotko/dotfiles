@@ -1,0 +1,17 @@
+# Local zsh configuration (machine-specific)
+# Copy this file to ~/.zshrc.local for machine-specific settings
+# that you don't want to commit to your dotfiles repo
+
+# Example: Local aliases
+# alias work="cd ~/work-projects"
+# alias personal="cd ~/personal-projects"
+
+# Example: Environment variables
+# export WORK_API_KEY="your-secret-key"
+# export EDITOR="nvim"
+
+# Example: Additional PATH entries
+# export PATH="$HOME/local/bin:$PATH"
+
+# Example: Company-specific settings
+# export COMPANY_VPN="vpn.company.com"
