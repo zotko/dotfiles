@@ -123,6 +123,7 @@ echo -e "\n${BLUE}Creating symlinks...${NC}"
 backup_and_link "$DOTFILES_DIR/shell/zshrc" "$HOME/.zshrc"
 backup_and_link "$DOTFILES_DIR/shell/p10k.zsh" "$HOME/.p10k.zsh"
 backup_and_link "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"
+backup_and_link "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore_global"
 
 # Final message
 echo -e "\n${GREEN}=====================================${NC}"
