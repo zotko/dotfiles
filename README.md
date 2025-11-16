@@ -9,6 +9,9 @@ My personal macOS development environment configuration files.
   - `.p10k.zsh` - Powerlevel10k theme configuration
 - **Git Configuration**
   - `.gitconfig` - Git aliases and settings
+  - `.gitignore_global` - Global gitignore patterns
+- **Package Management**
+  - `Brewfile` - All Homebrew packages, casks, and apps
 - **Bootstrap Script** - Automated setup for new machines
 
 ## Quick Start
@@ -40,12 +43,12 @@ source ~/.zshrc
 
 ## Prerequisites
 
-The install script will check for and help install:
+The install script will automatically install:
 
 - [Homebrew](https://brew.sh/) - macOS package manager
 - [Oh My Zsh](https://ohmyz.sh/) - Zsh framework
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - Zsh theme
-- Essential tools: `fzf`, `fd`, `bat`, `git`
+- All packages from `Brewfile` - CLI tools, GUI apps, and fonts
 
 ## Customization
 
@@ -54,18 +57,21 @@ After installation, you can customize:
 1. **Zsh Plugins**: Edit the `plugins=()` array in `shell/zshrc`
 2. **Prompt Theme**: Run `p10k configure` to reconfigure Powerlevel10k
 3. **fzf Options**: Modify `FZF_DEFAULT_OPTS` in `shell/zshrc`
+4. **Packages**: Edit `Brewfile` to add/remove packages, then run `brew bundle --file=~/dotfiles/Brewfile`
 
 ## File Structure
 
 ```
 dotfiles/
-├── README.md           # This file
-├── install.sh          # Bootstrap script
+├── README.md              # This file
+├── install.sh             # Bootstrap script
+├── Brewfile               # Homebrew packages list
 ├── shell/
-│   ├── zshrc          # Zsh configuration (symlinked to ~/.zshrc)
-│   └── p10k.zsh       # Powerlevel10k config (symlinked to ~/.p10k.zsh)
+│   ├── zshrc             # Zsh configuration (symlinked to ~/.zshrc)
+│   └── p10k.zsh          # Powerlevel10k config (symlinked to ~/.p10k.zsh)
 └── git/
-    └── gitconfig      # Git configuration (symlinked to ~/.gitconfig)
+    ├── gitconfig         # Git configuration (symlinked to ~/.gitconfig)
+    └── gitignore_global  # Global gitignore (symlinked to ~/.gitignore_global)
 ```
 
 ## Key Features

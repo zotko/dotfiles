@@ -76,18 +76,15 @@ else
     print_success "Homebrew is installed"
 fi
 
-# Install essential tools
-echo -e "\n${BLUE}Installing essential tools...${NC}"
-TOOLS=("fzf" "fd" "bat" "git")
-for tool in "${TOOLS[@]}"; do
-    if ! command -v "$tool" &> /dev/null; then
-        print_info "Installing $tool..."
-        brew install "$tool"
-        print_success "$tool installed"
-    else
-        print_success "$tool is already installed"
-    fi
-done
+# Install packages from Brewfile
+echo -e "\n${BLUE}Installing packages from Brewfile...${NC}"
+if [ -f "$DOTFILES_DIR/Brewfile" ]; then
+    print_info "Installing all packages, casks, and apps from Brewfile..."
+    brew bundle --file="$DOTFILES_DIR/Brewfile"
+    print_success "All packages installed from Brewfile"
+else
+    print_warning "Brewfile not found, skipping package installation"
+fi
 
 # Special handling for fzf key bindings
 if command -v fzf &> /dev/null; then
