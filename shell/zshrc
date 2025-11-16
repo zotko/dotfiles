@@ -168,6 +168,7 @@ fi
 
 # Custom aliases
 alias lg='lazygit'
+alias tcc='tmux -CC'
 
 export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/opt/python@3.14/libexec/bin:$PATH"
