@@ -7,4 +7,4 @@
 	name = Mykola Zotko
 	email = mzotko@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/mz/.gitignore
