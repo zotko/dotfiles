@@ -40,9 +40,6 @@ cask "claude-code"
 cask "dash"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
-cask "font-jetbrains-mono-nerd-font"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "gcloud-cli"
 # Web browser
 cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -55,15 +52,9 @@ cask "libreoffice"
 cask "moom"
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
-# Control your smart light system
-cask "philips-hue-sync"
 # Used to access context-specific actions when text is selected
 cask "popclip"
-# Team communication and collaboration software
-cask "slack"
 # Sound and audio controller
 cask "soundsource"
 # Open-source code editor
 cask "visual-studio-code"
-# Video communication and virtual meeting platform
-cask "zoom"
