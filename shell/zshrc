@@ -101,6 +101,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# alias-finder configuration
+export ZSH_ALIAS_FINDER_AUTOMATIC=true
+
 # fzf configuration
 # Default options for better UX
 export FZF_DEFAULT_OPTS="
@@ -162,11 +165,12 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Custom aliases
+alias lg='lazygit'
+
 export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/opt/python@3.14/libexec/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Load local machine-specific configuration (not tracked in git)
-[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
