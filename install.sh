@@ -122,6 +122,13 @@ backup_and_link "$DOTFILES_DIR/shell/p10k.zsh" "$HOME/.p10k.zsh"
 backup_and_link "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"
 backup_and_link "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore_global"
 
+# Create Jupyter config directory and symlink
+if [ ! -d "$HOME/.jupyter" ]; then
+    mkdir -p "$HOME/.jupyter"
+    print_success "Created Jupyter config directory"
+fi
+backup_and_link "$DOTFILES_DIR/jupyter/jupyter_notebook_config.py" "$HOME/.jupyter/jupyter_notebook_config.py"
+
 # Final message
 echo -e "\n${GREEN}=====================================${NC}"
 echo -e "${GREEN}   Installation Complete!${NC}"

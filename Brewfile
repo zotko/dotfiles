@@ -26,6 +26,8 @@ brew "ripgrep"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# JetBrains monospaced font for developers (Nerd Font patched)
+cask "font-jetbrains-mono-nerd-font"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Application launcher and productivity software
