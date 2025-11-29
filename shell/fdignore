@@ -1,0 +1,35 @@
+# macOS system folders
+Library/
+.Trash/
+Applications/
+Movies/
+Music/
+Pictures/
+Public/
+
+# Caches
+.cache/
+.npm/
+
+# Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.pyc
+
+# Node.js
+node_modules/
+
+# Git
+.git/
+
+# Build outputs
+dist/
+build/
+
+# Editor swap files
+*.swp
+*.swo
