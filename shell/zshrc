@@ -176,3 +176,4 @@ export PATH="/usr/local/bin:/usr/local/opt/python@3.14/libexec/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="$HOME/bin:$PATH"
+export CLOUDSDK_PYTHON=/usr/local/opt/python@3.13/bin/python3.13
