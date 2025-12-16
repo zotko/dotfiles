@@ -129,14 +129,22 @@ else
 fi
 
 # Fix fzf keybindings for vi-mode
-# These need to be set AFTER oh-my-zsh loads to work with vi-mode
-if [[ -n "${commands[fzf]}" ]]; then
+# Source fzf key-bindings directly to ensure widgets are defined
+# Then rebind them for vi-mode keymaps
+if [[ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ]]; then
+  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+  # Bind to vi insert mode
   bindkey -M viins '^R' fzf-history-widget
   bindkey -M viins '^T' fzf-file-widget
   bindkey -M viins '\ec' fzf-cd-widget
+  # Bind to vi command mode
   bindkey -M vicmd '^R' fzf-history-widget
   bindkey -M vicmd '^T' fzf-file-widget
   bindkey -M vicmd '\ec' fzf-cd-widget
+  # Also bind to main keymap for good measure
+  bindkey '^T' fzf-file-widget
+  bindkey '^R' fzf-history-widget
+  bindkey '\ec' fzf-cd-widget
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -177,3 +185,4 @@ export PATH="/usr/local/bin:/usr/local/opt/python@3.14/libexec/bin:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="$HOME/bin:$PATH"
 export CLOUDSDK_PYTHON=/usr/local/opt/python@3.13/bin/python3.13
+export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
