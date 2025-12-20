@@ -95,6 +95,8 @@ plugins=(
   ssh
   vi-mode
   fzf
+  thefuck
+  tldr
 )
 
 source $ZSH/oh-my-zsh.sh
