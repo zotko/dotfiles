@@ -5,11 +5,16 @@ My personal macOS development environment configuration files.
 ## What's Included
 
 - **Shell Configuration** (Zsh with Oh My Zsh)
-  - `.zshrc` - Zsh configuration with fzf, vi-mode, and other plugins
+  - `.zshrc` - Zsh configuration with fzf and other plugins
   - `.p10k.zsh` - Powerlevel10k theme configuration
 - **Git Configuration**
   - `.gitconfig` - Git aliases and settings
   - `.gitignore_global` - Global gitignore patterns
+- **App Configs**
+  - `ghostty/config` - Ghostty terminal
+  - `ccstatusline/settings.json` - Claude Code status line
+  - `claude/CLAUDE.md` - global Claude Code instructions
+  - Neovim config is cloned from `zotko/nvim`
 - **Package Management**
   - `Brewfile` - All Homebrew packages, casks, and apps
 - **Bootstrap Script** - Automated setup for new machines

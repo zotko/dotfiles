@@ -1,0 +1,3 @@
+theme = light:iTerm2 Solarized Light,dark:iTerm2 Solarized Dark
+
+macos-option-as-alt = true

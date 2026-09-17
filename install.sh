@@ -130,6 +130,21 @@ if [ ! -d "$HOME/.jupyter" ]; then
 fi
 backup_and_link "$DOTFILES_DIR/jupyter/jupyter_notebook_config.py" "$HOME/.jupyter/jupyter_notebook_config.py"
 
+# App configs
+mkdir -p "$HOME/.config/ghostty" "$HOME/.config/ccstatusline" "$HOME/.claude"
+backup_and_link "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+backup_and_link "$DOTFILES_DIR/ccstatusline/settings.json" "$HOME/.config/ccstatusline/settings.json"
+backup_and_link "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+
+# Neovim config lives in its own repo
+if [ ! -d "$HOME/.config/nvim" ]; then
+    print_info "Cloning nvim config..."
+    git clone git@github.com:zotko/nvim.git "$HOME/.config/nvim"
+    print_success "nvim config cloned"
+else
+    print_success "nvim config exists"
+fi
+
 # Final message
 echo -e "\n${GREEN}=====================================${NC}"
 echo -e "${GREEN}   Installation Complete!${NC}"
