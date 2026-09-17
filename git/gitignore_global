@@ -1,9 +1,16 @@
+# macOS
+.DS_Store
+
 # Claude
 CLAUDE.md
+CLAUDE.local.md
 .mcp.json
 .claude
 # ChatGPT
 AGENTS.md
+# Local scratch/test files
+.local/
+.envrc
+
 # VSCode
 .vscode
-.DS_Store
