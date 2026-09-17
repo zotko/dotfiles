@@ -13,7 +13,6 @@ My personal macOS development environment configuration files.
 - **App Configs**
   - `ghostty/config` - Ghostty terminal
   - `ccstatusline/settings.json` - Claude Code status line
-  - `claude/CLAUDE.md` - global Claude Code instructions
   - Neovim config is cloned from `zotko/nvim`
 - **Package Management**
   - `Brewfile` - All Homebrew packages, casks, and apps

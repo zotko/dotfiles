@@ -131,10 +131,9 @@ fi
 backup_and_link "$DOTFILES_DIR/jupyter/jupyter_notebook_config.py" "$HOME/.jupyter/jupyter_notebook_config.py"
 
 # App configs
-mkdir -p "$HOME/.config/ghostty" "$HOME/.config/ccstatusline" "$HOME/.claude"
+mkdir -p "$HOME/.config/ghostty" "$HOME/.config/ccstatusline"
 backup_and_link "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
 backup_and_link "$DOTFILES_DIR/ccstatusline/settings.json" "$HOME/.config/ccstatusline/settings.json"
-backup_and_link "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
 # Neovim config lives in its own repo
 if [ ! -d "$HOME/.config/nvim" ]; then
