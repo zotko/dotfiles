@@ -1,3 +1,7 @@
+# Silence direnv's "loading .envrc" / "export ..." chatter — it's the root cause
+# of the p10k instant-prompt warning when cd-ing into folders with a .envrc.
+export DIRENV_LOG_FORMAT=""
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -87,13 +91,13 @@ plugins=(
   gcloud
   gh
   git
+  git-auto-fetch
   iterm2
   jsontools
   macos
   pip
   python
   ssh
-  vi-mode
   fzf
   thefuck
   tldr
@@ -130,23 +134,12 @@ else
   export FZF_CTRL_T_OPTS="--preview 'cat {}'"
 fi
 
-# Fix fzf keybindings for vi-mode
-# Source fzf key-bindings directly to ensure widgets are defined
-# Then rebind them for vi-mode keymaps
+# fzf keybindings
 if [[ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ]]; then
   source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
-  # Bind to vi insert mode
-  bindkey -M viins '^R' fzf-history-widget
-  bindkey -M viins '^T' fzf-file-widget
-  bindkey -M viins '\ec' fzf-cd-widget
-  # Bind to vi command mode
-  bindkey -M vicmd '^R' fzf-history-widget
-  bindkey -M vicmd '^T' fzf-file-widget
-  bindkey -M vicmd '\ec' fzf-cd-widget
-  # Also bind to main keymap for good measure
   bindkey '^T' fzf-file-widget
   bindkey '^R' fzf-history-widget
-  bindkey '\ec' fzf-cd-widget
+  bindkey '^F' fzf-cd-widget
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -198,3 +191,12 @@ alias clr='claude -r'
 alias clp='claude -p'
 alias clw='claude -w'
 alias cls='claude --model sonnet'
+alias clpr='claude --from-pr'
+alias clwk='export CLAUDE_CODE_OAUTH_TOKEN=$(op read "op://Work/Claude OAuth/credential")'
+alias clpn='export CLAUDE_CODE_OAUTH_TOKEN=$(op read "op://Personal/Claude OAuth/credential")'
+alias k='kubectl'
+if command -v kubectl >/dev/null 2>&1; then
+  source <(kubectl completion zsh)
+  complete -o default -F __start_kubectl k
+fi
+export PATH="$HOME/.local/bin:$PATH"

@@ -8,3 +8,5 @@
 	email = mzotko@gmail.com
 [core]
 	excludesfile = /Users/mz/.gitignore
+[pull]
+	rebase = true
